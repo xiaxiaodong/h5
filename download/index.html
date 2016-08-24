@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="max-age=0" http-equiv="Cache-Control">
+    <meta content="240" name="MobileOptimized">
+    <meta content="YES" name="apple-touch-fullscreen">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <title>暴风影音</title>
+    <style>
+        html, body, div, span, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+        small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section, summary,
+        time, mark, audio, video {
+            margin:0;
+            padding:0;
+            vertical-align:baseline;
+        }
+        blockquote, q { quotes:none; }
+
+        blockquote:before, blockquote:after,
+        q:before, q:after { content:""; content:none;}
+
+        ins { background-color:#ff9; color:#000; text-decoration:none;}
+
+        mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold;}
+
+        del { text-decoration:line-through; }
+
+        abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help;}
+
+        table { border-collapse:collapse; border-spacing:0;}
+
+        hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0;}
+
+        input, select { vertical-align:middle; }
+
+        /* 禁用iPhone中Safari的字号自动调整 */
+        html {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        /* 去除iPhone中默认的input样式 */
+        input[type="submit"],
+
+        input[type="reset"],
+
+        input[type="button"],
+
+        input{-webkit-appearance:none; resize: none;}
+        /* 取消链接高亮  取消用户长按复制*/
+        body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,input,textarea,select,p,dl,dt,dd,a,img,button,form,table,th,tr,td,tbody,article,
+        aside, details,figcaption,figure,footer,header,hgroup, menu,nav,section{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0);-moz-user-select:none;-webkit-user-select:none; }
+        /* 设置HTML5元素为块 */
+        article, aside, details,figcaption,figure,footer,header,hgroup, menu,nav,section {
+            display: block;
+        }
+        /* 图片自适应 */
+        img {
+            max-width: 100%;
+            height: auto;
+            width:auto\9; /* ie8 */
+            -ms-interpolation-mode:bicubic;/*为了照顾ie图片缩放失真*/
+        }
+        /* 初始化 */
+        body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,input,textarea,select,p,dl,dt,dd,a,img,button,form,table,th,tr,td,tbody,article,
+        aside, details,figcaption,figure,footer,header,hgroup, menu,nav,section{margin:0; padding:0;}
+        body{font-family: Hiragino Sans GB, Microsoft YaHei, "Helvetica Neue", Helvetica, Arial, sans-serif;}
+
+        em,i{font-style:normal;}
+        strong{font-weight: normal;}
+        a{text-decoration:none; color:#8B8B8B;display: block;}
+        a:hover{text-decoration:none;}
+        ul,ol{list-style:none;}
+        *{box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;}
+
+        /* 页面css */
+        .content{max-width: 750px;font-size: 0;margin: 0 auto;}
+        .content img{display: block;width: 100%;}
+        .top_pic{position: relative;}
+        .download{width: 65%;position: absolute;top: 50%;left: 50%;-webkit-transform: translate(-50%,-50%);-ms-transform: translate(-50%,-50%);-moz-transform: translate(-50%,-50%);-o-transform: translate(-50%,-50%);transform: translate(-50%,-50%);}
+
+    </style>
+
+</head>
+
+<body>
+    <div class="content">
+        <div class="top_pic">
+            <img src="image/bg_top.jpg" alt="暴风影音">
+            <a href="#" class="download" id="download">
+                <img src="image/transparent.png" alt="下载">
+            </a>
+        </div>
+        <img src="image/bg_bottom.jpg" alt="暴风影音">
+    </div>
+</body>
+<script src="js/zepto.min.js"></script>
+<script>
+    var _bat = _bat || [];
+    (function() {
+        var host = encodeURIComponent(location.host);
+        var ba = document.createElement("script");
+        ba.src = "//ba.bdp.cn/bdpxt.js?js_type=3&token=anh5OR0DOAwDWyA1J3d5AxIcJFkUDxNZaV04JyRcPjYmIQgCfnduagc2JzMFDVcNigAAAA==&host=" + host;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ba, s);
+    })();
+</script>
+<script>
+    $(function(){
+        var _bdpq = window._bdpq || [];
+        function download(){
+            if ( !(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) ) {
+                top.location.href = 'http://dl.baofeng.com/mobile/bd/BaofengAndroid_d24_release.apk';
+            }
+        };
+        /*
+        setTimeout(function(){
+            _bdpq.push(['_trackEvent','app','autodown','暴风影音']);
+            download();
+        },2000);
+        */
+        /* zepto 加载 touch模块后 手机上的click事件有优化 */
+        $('#download').click(function(){
+            _bdpq.push(['_trackEvent','app','download','暴风影音']);
+            download();
+        });
+    });
+</script>
+</html>
