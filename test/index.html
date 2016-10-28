@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta id="viewport" name="viewport">
+    <title>暴风影音</title>
+    <style>
+        /*---初始化----*/
+        body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,p,select,input,dl,dt,dd,textarea{padding: 0;margin: 0;border: 0;vertical-align: baseline;outline: none;-webkit-tap-highlight-color: rgba(255,255,255,0);-moz-user-select:none;-webkit-user-select:none;}
+        ul,li,ol{list-style-type:none;}
+        a{ text-decoration:none; color: #000;}
+        a:link{text-decoration:none;}
+        a:visited{text-decoration:none;}
+        a:hover{ text-decoration:none;}
+        em{ font-style:normal;}
+        input{-webkit-appearance: none;}
+        input,textarea{-moz-user-select:text;-webkit-user-select:text;}
+        html,body{ display:box; display:-webkit-box; display:-o-box; display:-moz-box; display:-ms-box; -webkit-box-flex:1; -o-box-flex:1; -ms-box-flex:1; box-flex:1;
+            -webkit-box-orient: vertical;-o-box-orient: vertical; -ms-box-orient: vertical; box-orient: vertical;  font-family:"黑体", Helvetica;
+            width: 720px;max-height: 100%;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        .full_width{width: 720px;position: relative;}
+        .bg_img{width: 720px;z-index: 0;}
+        .fly_1{top: 52px;left: 214px;}
+        .fly_button{top: 429px;left: 143px;}
+        .fly_2{top: 196px;left: 41px;}
+        .fly_3{top: 507px;left: 130px;}
+        .fly_4{top: 790px;left: 130px;}
+        .content img{position: absolute;z-index: 1;}
+        #click{ position: absolute;z-index: 2;top: 429px;left: 135px;background-size: 100% 100%;display: inline-block;
+            height: 113px;width: 450px;cursor: pointer;cursor: hand;
+            background-color:red;
+        }
+    </style>
+    <script>
+        /* 修正viewport */
+        var web_width = 720;
+        var inner_width = window.innerWidth;
+        var scale = inner_width/web_width;
+        var viewportMate = document.getElementById("viewport");
+        var mate_value;
+
+        if(/ipad|iphone|mac/i.test(navigator.userAgent) || navigator.userAgent.indexOf('UCBrowser') > -1 || navigator.userAgent.indexOf('mqqbrowser')> -1){
+
+            /* 苹果和UC浏览器走这个分支 */
+            mate_value = 'width='+web_width+',user-scalable=no,target-densitydpi=device-dpi';
+            viewportMate.setAttribute('content', mate_value);
+            if(window.innerWidth < web_width){
+                mate_value = 'width='+web_width+', minimum-scale = '+scale+', maximum-scale = '+scale+',user-scalable=no,target-densitydpi=device-dpi';
+                viewportMate.setAttribute('content', mate_value);
+            }
+        }
+        else if (/android/i.test(navigator.userAgent)) {
+
+             var userAgent = navigator.userAgent;
+             var index = userAgent.indexOf("AppleWebKit");
+             if(index >= 0){
+                 var androidAppleWebKitVersionAll = parseFloat(userAgent.slice(index+11,index+17)).toFixed(2);
+             }
+             else{}
+             var androidAppleWebKitVersion = navigator.userAgent.match(/Android[\S\s]+AppleWebkit\/?(\d{3})/i);
+
+             if(androidAppleWebKitVersionAll <= 534.30 || androidAppleWebKitVersion[1] <= 534.40 ){
+                 /*
+                    低版本安卓的微博客户端 页面刷新后 获取页面宽度会出错
+                    将第一次获取的值存储起来,修正该bug
+                 */
+                 try{
+                     var isWeibo = (navigator.userAgent.toLowerCase().match(/weibo/i) == "weibo") ? true : false;
+                     if(isWeibo){
+                         var weiBoWidth = localStorage.getItem('weiBoWidth');
+                         if(weiBoWidth>979){weiBoWidth=false;}
+                         if(weiBoWidth){
+                             scale = weiBoWidth/web_width;
+                         }else{localStorage.setItem('weiBoWidth',inner_width)}
+                     }
+                 }catch(e){}
+
+                 mate_value = 'width='+web_width+', minimum-scale = '+scale+', initial-scale='+scale+', maximum-scale = '+scale+'';
+                 viewportMate.setAttribute('content', mate_value);
+             }
+             else{
+                 mate_value = 'width='+web_width+',user-scalable=no,target-densitydpi=device-dpi';
+                 viewportMate.setAttribute('content', mate_value);
+             }
+        }
+        else{
+            mate_value = 'width='+web_width+',user-scalable=no,target-densitydpi=device-dpi';
+            viewportMate.setAttribute('content', mate_value);
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <!-- 外层嵌套一个div 是为了保证火狐浏览器页面正常 -->
+    <div id="content" class="full_width content">
+        <img src="image/bg.jpg" class="bg_img" alt="背景图片"/>
+        <img src="image/baofeng_logo.png" class="fly_1" alt=""/>
+        <img id="button" src="image/button.png" class="fly_button" alt=""/>
+        <a id="click" ></a>
+        <img src="image/title_text.png" class="fly_2" alt=""/>
+        <img src="image/pic_1.png" class="fly_3" alt=""/>
+        <img src="image/pic_2.jpg" class="fly_4" alt=""/>
+    </div>
+</body>
+<script src="js/zepto.min.js"></script>
+<script>
+    var _bat = _bat || [];
+    (function() {
+        var host = encodeURIComponent(location.host);
+        var ba = document.createElement("script");
+        ba.src = "//ba.bdp.cn/bdpxt.js?js_type=3&token=anh5OR0DOAwDWyA1J3d5AxIcJFkUDxNZaV04JyRcPjYmIQgCfnduagc2JzMFDVcNigAAAA==&host=" + host;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ba, s);
+    })();
+</script>
+<script>
+    $(function(){
+        var _bdpq = window._bdpq || [];
+        function download(){
+            if ( !(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) ) {
+                top.location.href = 'http://dl.baofeng.com/mobile/bd/BaofengAndroid_d24_release.apk';
+            }
+        };
+        /*
+        setTimeout(function(){
+            _bdpq.push(['_trackEvent','app','autodown','暴风影音']);
+            download();
+        },2000);
+        */
+
+
+/*
+        $('#click').tap(function(){
+            _bdpq.push(['_trackEvent','app','download','暴风影音']);
+            download();
+        });*/
+
+        $('body').swipeUp(function(e){
+            console.log('swipeUp',e);
+        })
+        $('body').swipeDown(function(e){
+            console.log('swipeDown',e);
+        })
+        $('body').swipeLeft(function(e){
+            console.log('swipeLeft',e);
+        })
+        $('body').swipeRight(function(e){
+            console.log('swipeRight',e);
+        })
+    });
+</script>
+</html>

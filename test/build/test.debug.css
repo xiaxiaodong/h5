@@ -1,0 +1,148 @@
+/*---��ʼ��----*/
+
+body,
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+table,
+td,
+img,
+div,
+p,
+select,
+input,
+dl,
+dt,
+dd,
+textarea {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  vertical-align: baseline;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+ul,
+li,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+em {
+  font-style: normal;
+}
+
+input {
+  -webkit-appearance: none;
+}
+
+input,
+textarea {
+  -moz-user-select: text;
+  -webkit-user-select: text;
+}
+
+html,
+body {
+  display: box;
+  display: -webkit-box;
+  display: -o-box;
+  display: -moz-box;
+  display: -ms-box;
+  -webkit-box-flex: 1;
+  -o-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  -webkit-box-orient: vertical;
+  -o-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  font-family: "����", Helvetica;
+  max-height: 100%;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.full_width {
+  width: 10rem;
+  position: relative;
+}
+
+.bg_img {
+  width: 10rem;
+  z-index: 0;
+  left: 0;
+  top: 0;
+}
+
+.fly_1 {
+  top: 0.722222rem;
+  left: 2.972222rem;
+}
+
+.fly_button {
+  top: 5.958333rem;
+  left: 1.986111rem;
+}
+
+.fly_2 {
+  top: 2.722222rem;
+  left: 0.569444rem;
+}
+
+.fly_3 {
+  top: 7.041667rem;
+  left: 1.805556rem;
+}
+
+.fly_4 {
+  top: 10.833333rem;
+  left: 1.805556rem;
+}
+
+.content img {
+  position: absolute;
+  z-index: 1;
+}
+
+#click {
+  position: absolute;
+  z-index: 2;
+  top: 5.958333rem;
+  left: 1.875rem;
+  background-size: 100% 100%;
+  display: inline-block;
+  height: 1.569444rem;
+  width: 6.25rem;
+  cursor: pointer;
+  cursor: hand;
+}
