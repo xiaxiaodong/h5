@@ -14,15 +14,14 @@ html,body{ display:box; display:-webkit-box; display:-o-box; display:-moz-box; d
     margin: 0 auto;
     background-color: #ffffff;
 }
-.full_width{width: 720px;position: relative;}
+.full_width{width: 720px;position: relative;margin:0 auto;}
 .bg_img{width: 720px;z-index: 0;left:0;top:0;}
-.fly_1{top: 52px;left: 214px;}
-.fly_button{top: 429px;left: 143px;}
-.fly_2{top: 196px;left: 41px;}
-.fly_3{top: 507px;left: 130px;}
-.fly_4{top: 780px;left: 130px;}
+.fly_1{width: 295px;top: 52px;left: 214px;}
+.fly_button{width: 434px;top: 429px;left: 143px;}
+.fly_2{width: 636px;top: 196px;left: 41px;}
+.fly_3{width: 450px;top: 507px;left: 130px;}
+.fly_4{width: 450px;top: 785px;left: 130px;}
 .content img{position: absolute;z-index: 1;}
 #click{ position: absolute;z-index: 2;top: 429px;left: 135px;background-size: 100% 100%;display: inline-block;
     height: 113px;width: 450px;cursor: pointer;cursor: hand;
-    
 }

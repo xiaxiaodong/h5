@@ -95,6 +95,7 @@ body {
 .full_width {
   width: 10rem;
   position: relative;
+  margin: 0 auto;
 }
 
 .bg_img {
@@ -105,27 +106,32 @@ body {
 }
 
 .fly_1 {
+  width: 4.097222rem;
   top: 0.722222rem;
   left: 2.972222rem;
 }
 
 .fly_button {
+  width: 6.027778rem;
   top: 5.958333rem;
   left: 1.986111rem;
 }
 
 .fly_2 {
+  width: 8.833333rem;
   top: 2.722222rem;
   left: 0.569444rem;
 }
 
 .fly_3 {
+  width: 6.25rem;
   top: 7.041667rem;
   left: 1.805556rem;
 }
 
 .fly_4 {
-  top: 10.833333rem;
+  width: 6.25rem;
+  top: 10.902778rem;
   left: 1.805556rem;
 }
 
